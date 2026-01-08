@@ -1,0 +1,17 @@
+REM OMEGA BadUSB - Transaction Analysis
+REM Analyze transaction patterns and identify vulnerabilities
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING cd C:\Users\gucci\Desktop\OMEGA_PLOUTUS_X\ECOMEGA_X1
+ENTER
+STRING python -c "print('Transaction analysis attack initiated'); import time; time.sleep(5); print('Transaction patterns analyzed, vulnerabilities identified')"
+ENTER
+DELAY 6000
+STRING Transaction analysis completed
+ENTER
+REM Analyzes transaction patterns

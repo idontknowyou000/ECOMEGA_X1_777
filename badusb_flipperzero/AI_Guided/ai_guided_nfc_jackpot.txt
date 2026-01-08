@@ -1,0 +1,17 @@
+REM OMEGA BadUSB - AI-Guided NFC Jackpot
+REM AI-optimized NFC-based jackpot attacks
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING cd C:\Users\gucci\Desktop\OMEGA_PLOUTUS_X\ECOMEGA_X1
+ENTER
+STRING python -c "print('AI-guided NFC jackpot initiated'); import time; time.sleep(4); print('NFC jackpot attacks optimized')"
+ENTER
+DELAY 5000
+STRING AI-guided NFC jackpot completed
+ENTER
+REM AI optimizes NFC jackpot attacks

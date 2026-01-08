@@ -1,0 +1,14 @@
+2025-12-30 12:37:16,519 - INFO - HTTP Proxy Server listening on 0.0.0.0:8080
+2025-12-30 12:37:16,519 - INFO - SOCKS5 Proxy Server listening on 0.0.0.0:1080
+2025-12-30 12:37:16,519 - INFO - Tor Proxy integration starting...
+2025-12-30 12:37:16,519 - INFO - SSL Proxy Server listening on 0.0.0.0:4433
+2025-12-30 12:37:16,520 - INFO - Load balancer started
+2025-12-30 12:37:16,520 - INFO - Statistics server started
+2025-12-30 12:37:18,564 - WARNING - Tor Proxy not available: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-01-05 08:51:30,825 - INFO - HTTP Proxy Server listening on 0.0.0.0:8080
+2026-01-05 08:51:30,826 - INFO - Tor Proxy integration starting...
+2026-01-05 08:51:30,826 - INFO - Load balancer started
+2026-01-05 08:51:30,826 - INFO - SSL Proxy Server listening on 0.0.0.0:4433
+2026-01-05 08:51:30,825 - INFO - SOCKS5 Proxy Server listening on 0.0.0.0:1080
+2026-01-05 08:51:30,827 - INFO - Statistics server started
+2026-01-05 08:51:32,891 - WARNING - Tor Proxy not available: [WinError 10061] No connection could be made because the target machine actively refused it

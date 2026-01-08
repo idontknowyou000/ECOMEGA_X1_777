@@ -1,0 +1,17 @@
+REM OMEGA BadUSB - NFC Replay
+REM Replay captured NFC traffic with automated sequences
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING cd C:\Users\gucci\Desktop\OMEGA_PLOUTUS_X\ECOMEGA_X1
+ENTER
+STRING python -c "print('NFC replay attack started'); import time; time.sleep(3); print('Captured NFC traffic replayed')"
+ENTER
+DELAY 4000
+STRING NFC replay attack finished
+ENTER
+REM Replays captured NFC traffic

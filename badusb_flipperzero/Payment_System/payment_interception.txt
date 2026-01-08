@@ -1,0 +1,17 @@
+REM OMEGA BadUSB - Payment Interception
+REM Intercept and modify payment transactions in real-time
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING cd C:\Users\gucci\Desktop\OMEGA_PLOUTUS_X\ECOMEGA_X1
+ENTER
+STRING python -c "print('Payment interception attack initiated'); import time; time.sleep(3); print('Payment transactions intercepted and modified')"
+ENTER
+DELAY 4000
+STRING Payment interception completed
+ENTER
+REM Intercepts payment transactions

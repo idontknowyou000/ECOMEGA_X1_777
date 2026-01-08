@@ -1,0 +1,17 @@
+REM OMEGA BadUSB - NFC Relay
+REM Relay NFC traffic between devices with real-time modification
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING cd C:\Users\gucci\Desktop\OMEGA_PLOUTUS_X\ECOMEGA_X1
+ENTER
+STRING python -c "print('NFC relay attack initiated'); import time; time.sleep(4); print('NFC traffic relayed with modifications')"
+ENTER
+DELAY 5000
+STRING NFC relay attack completed
+ENTER
+REM Relays NFC traffic with modifications

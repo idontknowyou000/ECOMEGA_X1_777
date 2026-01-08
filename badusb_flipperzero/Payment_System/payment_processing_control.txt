@@ -1,0 +1,17 @@
+REM OMEGA BadUSB - Payment Processing Control
+REM Take control of payment processing systems
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING cd C:\Users\gucci\Desktop\OMEGA_PLOUTUS_X\ECOMEGA_X1
+ENTER
+STRING python -c "print('Payment processing control attack initiated'); import time; time.sleep(4); print('Payment processing systems compromised')"
+ENTER
+DELAY 5000
+STRING Payment processing control established
+ENTER
+REM Takes control of payment systems

@@ -1,0 +1,21 @@
+{
+  "monitor_started": "2025-12-27T04:32:54.291228",
+  "current_time": "2025-12-27T04:32:54.291531",
+  "evolution_count": 0,
+  "max_adaptation_level": 0,
+  "max_success_rate": 0.0,
+  "last_evolution_time": 0,
+  "current_stats": {},
+  "integration_status": {},
+  "system_info": {
+    "platform": "Windows",
+    "platform_version": "10.0.26200",
+    "architecture": "AMD64",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "hostname": "idontknow",
+    "python_version": "3.14.0",
+    "monitor_started": "2025-12-27T04:32:54.291228"
+  },
+  "threat_level": "MEDIUM",
+  "danger_level": "LIMITED THREAT"
+}

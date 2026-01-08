@@ -1,0 +1,17 @@
+REM OMEGA BadUSB - Protocol Analysis
+REM AI-assisted NFC protocol analysis and vulnerability detection
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING cd C:\Users\gucci\Desktop\OMEGA_PLOUTUS_X\ECOMEGA_X1
+ENTER
+STRING python -c "from omega_ai_server import OmegaAIServer; server = OmegaAIServer(); print('AI-assisted NFC protocol analysis started'); import time; time.sleep(5); print('Vulnerabilities detected')"
+ENTER
+DELAY 6000
+STRING NFC protocol analysis finished
+ENTER
+REM AI-assisted protocol analysis

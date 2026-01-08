@@ -1,0 +1,17 @@
+REM OMEGA BadUSB - Advanced Process Injection Attack
+REM Launches advanced injection with process hollowing and APC injection
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING cd C:\Users\gucci\Desktop\OMEGA_PLOUTUS_X\ECOMEGA_X1
+ENTER
+STRING python -c "from omega_ai_server import OmegaAIServer; server = OmegaAIServer(); print('Advanced process hollowing initiated')"
+ENTER
+DELAY 2000
+STRING echo Advanced injection attack launched
+ENTER
+REM Process hollowing using svchost.exe

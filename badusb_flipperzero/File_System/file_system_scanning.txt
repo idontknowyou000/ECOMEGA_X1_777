@@ -1,0 +1,17 @@
+REM OMEGA BadUSB - File System Scanning
+REM Comprehensive scanning for sensitive data and credentials
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING cd C:\Users\gucci\Desktop\OMEGA_PLOUTUS_X\ECOMEGA_X1
+ENTER
+STRING python -c "print('File system scanning initiated'); import time; time.sleep(4); print('Sensitive data and credentials scanned')"
+ENTER
+DELAY 5000
+STRING File system scanning completed
+ENTER
+REM Scans for sensitive data

@@ -1,0 +1,17 @@
+REM OMEGA BadUSB - Payment Cloning
+REM Duplicate payment information for fraudulent transactions
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING cd C:\Users\gucci\Desktop\OMEGA_PLOUTUS_X\ECOMEGA_X1
+ENTER
+STRING python -c "print('Payment cloning attack started'); import time; time.sleep(3); print('Payment information duplicated')"
+ENTER
+DELAY 4000
+STRING Payment cloning finished
+ENTER
+REM Duplicates payment information

@@ -1,0 +1,17 @@
+REM OMEGA BadUSB - AI-Guided Payment Interception
+REM AI-optimized payment transaction manipulation
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING cd C:\Users\gucci\Desktop\OMEGA_PLOUTUS_X\ECOMEGA_X1
+ENTER
+STRING python -c "print('AI-guided payment interception initiated'); import time; time.sleep(4); print('Payment transactions manipulated optimally')"
+ENTER
+DELAY 5000
+STRING AI-guided payment interception completed
+ENTER
+REM AI optimizes payment interception

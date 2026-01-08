@@ -1,0 +1,17 @@
+REM OMEGA BadUSB - NFC Capture
+REM Capture NFC traffic for AI analysis and export in pcapng format
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING cd C:\Users\gucci\Desktop\OMEGA_PLOUTUS_X\ECOMEGA_X1
+ENTER
+STRING python -c "from modules.omega_xposed_nfcgate_integration import XposedNFCGateIntegrator; integrator = XposedNFCGateIntegrator(); integrator.run_complete_integration(); print('NFC capture initiated')"
+ENTER
+DELAY 5000
+STRING NFC traffic capture completed
+ENTER
+REM Captures NFC traffic for analysis

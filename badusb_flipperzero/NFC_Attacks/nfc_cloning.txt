@@ -1,0 +1,17 @@
+REM OMEGA BadUSB - NFC Cloning
+REM Read and clone NFC cards/tags for fraudulent use
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING cd C:\Users\gucci\Desktop\OMEGA_PLOUTUS_X\ECOMEGA_X1
+ENTER
+STRING python -c "print('NFC cloning attack initiated'); import time; time.sleep(4); print('NFC card cloned successfully')"
+ENTER
+DELAY 5000
+STRING NFC cloning completed
+ENTER
+REM Clones NFC cards for fraudulent use

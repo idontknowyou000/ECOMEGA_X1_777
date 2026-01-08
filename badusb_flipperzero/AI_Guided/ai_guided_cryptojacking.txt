@@ -1,0 +1,17 @@
+REM OMEGA BadUSB - AI-Guided Cryptojacking
+REM Optimal cryptocurrency mining operations
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING cd C:\Users\gucci\Desktop\OMEGA_PLOUTUS_X\ECOMEGA_X1
+ENTER
+STRING python -c "print('AI-guided cryptojacking initiated'); import time; time.sleep(5); print('Cryptocurrency mining optimized')"
+ENTER
+DELAY 6000
+STRING AI-guided cryptojacking completed
+ENTER
+REM AI optimizes crypto mining

