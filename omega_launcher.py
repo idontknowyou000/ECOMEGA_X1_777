@@ -62,28 +62,36 @@ def clear_screen():
     os.system('clear' if os.name == 'posix' else 'cls')
 
 def print_header():
-    """Print the OMEGA PLOUTUS X header"""
+    """Print the fancy OMEGA PLOUTUS X header with omega symbol"""
     clear_screen()
 
-    header = f"""
-{Colors.CYAN}╔══════════════════════════════════════════════════════════════╗{Colors.ENDC}
-{Colors.CYAN}║{Colors.ENDC}                    {Colors.RED}🔥 OMEGA PLOUTUS X 🔥{Colors.ENDC}                     {Colors.CYAN}║{Colors.ENDC}
-{Colors.CYAN}║{Colors.ENDC}              {Colors.YELLOW}OFFICIAL CYBER WEAPON PLATFORM{Colors.ENDC}                {Colors.CYAN}║{Colors.ENDC}
-{Colors.CYAN}║{Colors.ENDC}                                                              {Colors.CYAN}║{Colors.ENDC}
-{Colors.CYAN}║{Colors.ENDC}  {Colors.GREEN}[01]{Colors.ENDC} Automated ecoATM Deployment     {Colors.GREEN}[06]{Colors.ENDC} Wireless Attacks    {Colors.CYAN}║{Colors.ENDC}
-{Colors.CYAN}║{Colors.ENDC}  {Colors.GREEN}[02]{Colors.ENDC} Kiosk Jackpot Attacks          {Colors.GREEN}[07]{Colors.ENDC} Network Exploitation {Colors.CYAN}║{Colors.ENDC}
-{Colors.CYAN}║{Colors.ENDC}  {Colors.GREEN}[03]{Colors.ENDC} ATM Jackpot Operations         {Colors.GREEN}[08]{Colors.ENDC} Financial Attacks    {Colors.CYAN}║{Colors.ENDC}
-{Colors.CYAN}║{Colors.ENDC}  {Colors.GREEN}[04]{Colors.ENDC} Command Injection Suite        {Colors.GREEN}[09]{Colors.ENDC} Data Exfiltration    {Colors.CYAN}║{Colors.ENDC}
-{Colors.CYAN}║{Colors.ENDC}  {Colors.GREEN}[05]{Colors.ENDC} ARP Poisoning Tools            {Colors.GREEN}[10]{Colors.ENDC} System Monitoring    {Colors.CYAN}║{Colors.ENDC}
-{Colors.CYAN}║{Colors.ENDC}                                                              {Colors.CYAN}║{Colors.ENDC}
-{Colors.CYAN}║{Colors.ENDC}  {Colors.RED}[99]{Colors.ENDC} Exit                                                 {Colors.CYAN}║{Colors.ENDC}
-{Colors.CYAN}║{Colors.ENDC}                                                              {Colors.CYAN}║{Colors.ENDC}
-{Colors.CYAN}║{Colors.ENDC}  {Colors.YELLOW}Type 'help' for commands or 'use <module>' to select{Colors.ENDC}       {Colors.CYAN}║{Colors.ENDC}
-{Colors.CYAN}╚══════════════════════════════════════════════════════════════╝{Colors.ENDC}
+    # Fancy animated header (simple version)
+    print(f"{Colors.MAGENTA}{'='*80}{Colors.ENDC}")
+    print(f"{Colors.CYAN}{' '*30}🚀 INITIALIZING OMEGA_X 🚀{' '*30}{Colors.ENDC}")
+    print(f"{Colors.MAGENTA}{'='*80}{Colors.ENDC}")
+    time.sleep(0.5)
 
-{Colors.BLUE}OMEGA PLOUTUS X vX.1.0{Colors.ENDC} | {Colors.GREEN}AI-Driven Cyber Exploitation Framework{Colors.ENDC}
+    header = f"""
+{Colors.CYAN}╔══════════════════════════════════════════════════════════════════════════════╗{Colors.ENDC}
+{Colors.CYAN}║{Colors.ENDC}                                                                              {Colors.CYAN}║{Colors.ENDC}
+{Colors.CYAN}║{Colors.ENDC}                {Colors.RED}🔥 Ω {Colors.ENDC}{Colors.MAGENTA}MEGA PLOUTUS{Colors.ENDC} {Colors.RED}X{Colors.ENDC} {Colors.YELLOW}SUPREME EDITION{Colors.ENDC} {Colors.RED}🔥{Colors.ENDC}                {Colors.CYAN}║{Colors.ENDC}
+{Colors.CYAN}║{Colors.ENDC}            {Colors.GREEN}ULTIMATE AI-DRIVEN CYBER EXPLOITATION FRAMEWORK{Colors.ENDC}             {Colors.CYAN}║{Colors.ENDC}
+{Colors.CYAN}║{Colors.ENDC}                                                                              {Colors.CYAN}║{Colors.ENDC}
+{Colors.CYAN}║{Colors.ENDC}  {Colors.GREEN}[01]{Colors.ENDC} Automated ecoATM Deployment     {Colors.GREEN}[06]{Colors.ENDC} Wireless Attacks        {Colors.GREEN}[11]{Colors.ENDC} ecoATM Camera Control  {Colors.CYAN}║{Colors.ENDC}
+{Colors.CYAN}║{Colors.ENDC}  {Colors.GREEN}[02]{Colors.ENDC} Kiosk Jackpot Attacks          {Colors.GREEN}[07]{Colors.ENDC} Network Exploitation     {Colors.GREEN}[12]{Colors.ENDC} Source Code Extraction {Colors.CYAN}║{Colors.ENDC}
+{Colors.CYAN}║{Colors.ENDC}  {Colors.GREEN}[03]{Colors.ENDC} ATM Jackpot Operations         {Colors.GREEN}[08]{Colors.ENDC} Financial Attacks        {Colors.GREEN}[13]{Colors.ENDC} Route Redirection      {Colors.CYAN}║{Colors.ENDC}
+{Colors.CYAN}║{Colors.ENDC}  {Colors.GREEN}[04]{Colors.ENDC} Command Injection Suite        {Colors.GREEN}[09]{Colors.ENDC} Data Exfiltration        {Colors.GREEN}[14]{Colors.ENDC} Xposed NFCGate Bridge  {Colors.CYAN}║{Colors.ENDC}
+{Colors.CYAN}║{Colors.ENDC}  {Colors.GREEN}[05]{Colors.ENDC} ARP Poisoning Tools            {Colors.GREEN}[10]{Colors.ENDC} System Monitoring        {Colors.GREEN}[15]{Colors.ENDC} NFC Toolchain Ctrl     {Colors.CYAN}║{Colors.ENDC}
+{Colors.CYAN}║{Colors.ENDC}                                                                              {Colors.CYAN}║{Colors.ENDC}
+{Colors.CYAN}║{Colors.ENDC}  {Colors.MAGENTA}[16]{Colors.ENDC} BGP Hijacking                  {Colors.MAGENTA}[17]{Colors.ENDC} PayloadsAllTheThings     {Colors.RED}[00]{Colors.ENDC} Ω FULL SYSTEM ASSAULT   {Colors.CYAN}║{Colors.ENDC}
+{Colors.CYAN}║{Colors.ENDC}  {Colors.MAGENTA}[18]{Colors.ENDC} USB-HID Wireless               {Colors.MAGENTA}[19]{Colors.ENDC} Nmap Network Scanner     {Colors.RED}[99]{Colors.ENDC} Exit                     {Colors.CYAN}║{Colors.ENDC}
+{Colors.CYAN}║{Colors.ENDC}                                                                              {Colors.CYAN}║{Colors.ENDC}
+{Colors.CYAN}║{Colors.ENDC}  {Colors.YELLOW}Type 'help' for commands or 'use <module>' to select modules{Colors.ENDC}             {Colors.CYAN}║{Colors.ENDC}
+{Colors.CYAN}╚══════════════════════════════════════════════════════════════════════════════╝{Colors.ENDC}
+
+{Colors.BLUE}Ω MEGA PLOUTUS X v3.0 SUPREME EDITION{Colors.ENDC} | {Colors.GREEN}AI-Driven Cyber Domination Framework{Colors.ENDC}
 {Colors.YELLOW}Platform:{Colors.ENDC} {platform.system()} {platform.release()} | {Colors.YELLOW}Python:{Colors.ENDC} {sys.version.split()[0]}
-{Colors.MAGENTA}Session started at:{Colors.ENDC} {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+{Colors.MAGENTA}Session started at:{Colors.ENDC} {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} | {Colors.RED}⚡ READY FOR TOTAL DOMINATION ⚡{Colors.ENDC}
 """
 
     print(header)
@@ -600,6 +608,118 @@ def run_usb_hid_wireless():
     except Exception as e:
         print(f"{Colors.RED}❌ USB-HID wireless attacks failed: {e}{Colors.ENDC}")
 
+def run_nmap_scanner():
+    """Run Nmap Network Scanner - IP scan, topology, and open port scan"""
+    print_banner()
+    print(f"{Colors.GREEN}🔍 Launching Nmap Network Scanner...{Colors.ENDC}")
+    print(f"{Colors.YELLOW}Advanced network reconnaissance and port scanning{Colors.ENDC}")
+    print()
+
+    print(f"{Colors.GREEN}Nmap Scan Options:{Colors.ENDC}")
+    print("  [1] IP Range Scan (discover hosts)")
+    print("  [2] Network Topology Mapping")
+    print("  [3] Open Port Scanning")
+    print("  [4] Service Version Detection")
+    print("  [5] OS Fingerprinting")
+    print("  [6] Vulnerability Scanning")
+    print("  [7] Aggressive Scan (All techniques)")
+    print()
+
+    choice = input(f"{Colors.CYAN}Select scan type (1-7): {Colors.ENDC}").strip()
+
+    try:
+        if choice == '1':
+            # IP Range Scan
+            target = input(f"{Colors.CYAN}Target network/range (e.g., 192.168.1.0/24): {Colors.ENDC}").strip()
+            if target:
+                run_nmap_scan("-sn", target, "Host Discovery Scan")
+
+        elif choice == '2':
+            # Network Topology
+            target = input(f"{Colors.CYAN}Target network (e.g., 192.168.1.0/24): {Colors.ENDC}").strip()
+            if target:
+                run_nmap_scan("-sn --traceroute", target, "Network Topology Mapping")
+
+        elif choice == '3':
+            # Open Port Scan
+            target = input(f"{Colors.CYAN}Target IP/hostname: {Colors.ENDC}").strip()
+            port_range = input(f"{Colors.CYAN}Port range (default: 1-1000): {Colors.ENDC}").strip() or "1-1000"
+            if target:
+                run_nmap_scan(f"-p {port_range}", target, "Open Port Scan")
+
+        elif choice == '4':
+            # Service Version Detection
+            target = input(f"{Colors.CYAN}Target IP/hostname: {Colors.ENDC}").strip()
+            if target:
+                run_nmap_scan("-sV", target, "Service Version Detection")
+
+        elif choice == '5':
+            # OS Fingerprinting
+            target = input(f"{Colors.CYAN}Target IP/hostname: {Colors.ENDC}").strip()
+            if target:
+                run_nmap_scan("-O", target, "OS Fingerprinting")
+
+        elif choice == '6':
+            # Vulnerability Scanning
+            target = input(f"{Colors.CYAN}Target IP/hostname: {Colors.ENDC}").strip()
+            if target:
+                run_nmap_scan("--script vuln", target, "Vulnerability Scanning")
+
+        elif choice == '7':
+            # Aggressive Scan
+            target = input(f"{Colors.CYAN}Target IP/hostname: {Colors.ENDC}").strip()
+            if target:
+                run_nmap_scan("-A -T4", target, "Aggressive Comprehensive Scan")
+
+        else:
+            print(f"{Colors.YELLOW}Invalid choice.{Colors.ENDC}")
+
+    except Exception as e:
+        print(f"{Colors.RED}❌ Nmap scanner error: {e}{Colors.ENDC}")
+
+def run_nmap_scan(flags, target, scan_name):
+    """Execute nmap scan with given parameters"""
+    print(f"{Colors.BLUE}🔍 Starting {scan_name} on {target}{Colors.ENDC}")
+    print(f"{Colors.BLUE}Command: nmap {flags} {target}{Colors.ENDC}")
+    print(f"{Colors.YELLOW}{'='*60}{Colors.ENDC}")
+
+    try:
+        # Check if nmap is installed
+        result = subprocess.run(["which", "nmap"], capture_output=True, text=True)
+        if result.returncode != 0:
+            print(f"{Colors.RED}❌ Nmap not found. Please install nmap first.{Colors.ENDC}")
+            print(f"{Colors.YELLOW}💡 Install with: sudo apt install nmap{Colors.ENDC}")
+            return
+
+        # Execute nmap scan
+        cmd = ["nmap"] + flags.split() + [target]
+        process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
+        # Read output in real-time
+        while True:
+            output = process.stdout.readline()
+            if output == '' and process.poll() is not None:
+                break
+            if output:
+                print(output.strip())
+
+        # Get return code
+        return_code = process.poll()
+
+        if return_code == 0:
+            print(f"{Colors.GREEN}✅ {scan_name} completed successfully{Colors.ENDC}")
+        else:
+            stderr = process.stderr.read()
+            print(f"{Colors.RED}❌ {scan_name} failed (code: {return_code}){Colors.ENDC}")
+            if stderr:
+                print(f"{Colors.RED}Error: {stderr.strip()}{Colors.ENDC}")
+
+    except FileNotFoundError:
+        print(f"{Colors.RED}❌ Nmap command not found{Colors.ENDC}")
+        print(f"{Colors.YELLOW}💡 Make sure nmap is installed and in PATH{Colors.ENDC}")
+    except Exception as e:
+        print(f"{Colors.RED}❌ Scan execution error: {e}{Colors.ENDC}")
+
 def run_omega_full_assault():
     """Run OMEGA - Full System Assault - ALL attacks simultaneously"""
     print_banner()
@@ -850,7 +970,7 @@ def main():
     """Main OMEGA PLOUTUS X launcher"""
     parser = argparse.ArgumentParser(description="OMEGA PLOUTUS X Cyber Weapon Platform")
     parser.add_argument("--no-banner", action="store_true", help="Skip the banner display")
-    parser.add_argument("--module", type=int, choices=range(0, 19), help="Launch specific module directly (0=OMEGA full assault)")
+    parser.add_argument("--module", type=int, choices=range(0, 20), help="Launch specific module directly (0=OMEGA full assault)")
 
     args = parser.parse_args()
 
@@ -929,7 +1049,8 @@ def main():
                         15: run_nfc_toolchain_controller,
                         16: run_bgp_hijacking,
                         17: run_payloads_all_the_things,
-                        18: run_usb_hid_wireless
+                        18: run_usb_hid_wireless,
+                        19: run_nmap_scanner
                     }
 
                     if module_num in module_functions:
